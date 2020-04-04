@@ -1,0 +1,30 @@
+{
+  "Settings": "Ayarlar",
+  "standard": "standart",
+  "extended": "genişletilmiş",
+  "programmer": "programcı",
+  "Language": "Dil",
+  "Precision for floating-point numbers in result": "Sonuçlarda ondalıklı sayı hassasiyeti",
+  "Number of digits in result": "Sonuçlarda azami basamak sayısı",
+  "Ignore commas": "Virgulü yok say",
+  "Use for floating-point numbers": "Ondalıklı sayı gösterimi",
+  "Info": "Bilgi",
+  "Style": "Stil",
+  "Functions": "Fonksiyonlar",
+  "About": "Hakkında",
+  "AboutTxt": "Hasap ücretsiz, reklamsız ve açık kaynak kodlu bir matematiksel işlemcidir.",
+  "MoreAbout": "Daha fazla bilgi",
+  "timeUnits": {
+    "year": "yıl",
+    "month": "ay",
+    "day": "gün",
+    "hour": "saat",
+    "minute": "dakika",
+    "second": "saniye",
+    "ms": "milisaniye"
+  },
+  "inpExpo": "Yazılan ifadeler otomatik olarak hesaplanır",
+  "mathParseError": "İfadeler anlaşılamadı",
+  "appTitle": "Hasap: Matematiksel İşlemci"
+  
+}

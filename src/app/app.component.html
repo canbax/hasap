@@ -1,0 +1,198 @@
+<mat-sidenav-container class="main-container mat-app-background">
+  <mat-sidenav mode="side" #sidenav [(opened)]="isOpen" (disableClose)="true">
+    <mat-accordion>
+
+      <div>
+        <div class="form-part">
+          <form [formGroup]="fnListForm" class="container">
+            <mat-form-field>
+              <input type="text" matInput [placeholder]="'Functions'|translate" formControlName="fnGroup"
+                [matAutocomplete]="autoGroup">
+              <mat-autocomplete #autoGroup="matAutocomplete" (optionSelected)="fnSelected($event)">
+                <mat-optgroup *ngFor="let group of fnGroupOptions | async" [label]="group.title">
+                  <mat-option *ngFor="let name of group.fnList" [value]="name">
+                    {{name}}
+                  </mat-option>
+                </mat-optgroup>
+              </mat-autocomplete>
+            </mat-form-field>
+            <div>
+              <span class="">
+                {{fnExpo}}
+              </span>
+              <a *ngIf="link2fn.length > 0" target="_blank" [href]="link2fn">
+                <mat-icon>info</mat-icon>
+              </a>
+            </div>
+          </form>
+        </div>
+        <div class="form-part">
+          <label>Mod</label>
+          <mat-radio-group aria-labelledby="example-radio-group-label" [(ngModel)]="settings.mode"
+            (change)="onModeChange()">
+            <mat-radio-button *ngFor="let m of modes" [value]="m">
+              {{m|translate}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="form-part">
+          <div>{{'Language'|translate}}</div>
+          <mat-form-field>
+            <mat-select [(value)]="settings.lang" (selectionChange)="switchLang()">
+              <mat-option *ngFor="let language of translate.getLangs()" [value]="language">
+                {{langs[language]}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-part">
+          <div>{{'Precision for floating-point numbers in result'|translate}}</div>
+          <mat-form-field>
+            <mat-select [(value)]="settings.selectedFloatingPointPrecision"
+              (selectionChange)="floatingPrecisionChanged()">
+              <mat-option *ngFor="let n of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]" [value]="n">
+                {{n}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-part">
+          <div>{{'Number of digits in result'|translate}}</div>
+          <mat-form-field>
+            <mat-select [(value)]="settings.numDigit4Results" (selectionChange)="numDigit4ResultChanged()">
+              <mat-option *ngFor="let n of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]" [value]="n">
+                {{n}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-part">
+          <mat-checkbox [disabled]="settings.floatingPointMarker == ',' || settings.mode == 'programmer' "
+            [(checked)]="settings.isIgnoreComma" (change)="isIgnoreCommaChanged()">
+            {{'Ignore commas'|translate}}
+          </mat-checkbox>
+        </div>
+        <div class="form-part">
+          <div>{{'Use for floating-point numbers'|translate}}</div>
+          <mat-radio-group [(ngModel)]="settings.floatingPointMarker" class="degree-radio"
+            (change)="floatMarkerChanged()" [disabled]="settings.mode == 'programmer'">
+            <mat-radio-button value=".">.</mat-radio-button>
+            <mat-radio-button value=",">,</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="form-part">
+          <div>{{'Style'|translate}}</div>
+          <mat-radio-group [(ngModel)]="settings.path2CssTheme" (change)="onCssThemeChange()">
+            <mat-radio-button *ngFor="let t of cssThemes" [value]="t.path">
+              {{t.txt}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="form-part">
+          <h5>{{'About'|translate}}</h5>
+          <span style="display:table; max-width:20vw;">{{'AboutTxt'|translate}}</span>
+          <small> <span>Hasap 1.0.0</span> </small>
+          <a href="https://github.com/canbax/handyCalc" target="_blank" mat-button>
+            <small> <span>{{'MoreAbout'|translate}}</span> </small>
+          </a>
+        </div>
+      </div>
+    </mat-accordion>
+
+  </mat-sidenav>
+  <mat-sidenav-content class="m-5">
+    <div>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="app-title" [ngClass]="{'inf-shine-txt': isAnimateTitle}"> {{'appTitle'|translate}}</span>
+    </div>
+
+    <div class="m-5">
+
+      <div [hidden]="settings.mode != 'date & time'">
+        <mat-form-field class="editor" appearance="outline">
+          <mat-chip-list #chipList>
+            <mat-chip *ngFor="let d of dateChips; let i = index" [removable]="true" (removed)="removeChip(i)">
+              {{d.str}}
+              <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+            <input #userDateInp2 #userDateInp="matAutocompleteTrigger" [matAutocomplete]="auto"
+              [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="[13, 32]" [matChipInputAddOnBlur]="false"
+              (matChipInputTokenEnd)="addChip($event)" (change)="syncInp()">
+            <mat-hint>{{usrHint}}</mat-hint>
+          </mat-chip-list>
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="timeUnitSelected($event)">
+            <mat-option *ngFor="let m of dateUnits">
+              {{m}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field *ngIf="settings.mode != 'date & time'" [style.fontSize]="16" class="editor"
+          appearance="outline">
+          <textarea #userInp (keydown)="onKeyDown($event)" (keyup)="onKeyUp($event)" autofocus matInput
+            cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" [ngModel]='inp'
+            (ngModelChange)='changed($event)' cdkAutosizeMaxRows="10" [placeholder]="'inpExpo'|translate">
+          </textarea>
+          <mat-hint>{{usrHint}}</mat-hint>
+          <!-- buttons which are inline with input -->
+          <span matSuffix>
+            <span [hidden]="settings.mode != 'date & time'">
+              <button style="display: inline;" mat-button mat-icon-button id="date-inp">
+                <mat-icon>date_range</mat-icon>
+              </button>
+            </span>
+            <button style="display: inline;" mat-button mat-icon-button (click)="copy(inp)">
+              <mat-icon>file_copy</mat-icon>
+            </button>
+            <button style="display: inline;" mat-button mat-icon-button (click)="isShowHistory=!isShowHistory;">
+              <mat-icon>history</mat-icon>
+            </button>
+          </span>
+        </mat-form-field>
+        <div class="centered-div">
+          <div *ngIf="settings.mode == 'programmer'">
+            <mat-radio-group [(ngModel)]="base" (change)="compute()" matRipple [matRippleTrigger]="resultRipple1"
+              #resultRipple1>
+              <mat-radio-button *ngFor="let b of bases; let i = index" [value]="b">
+                <span class="result-base"> {{b}} &nbsp;&nbsp;</span>
+                <span class="result-txt">{{results[i]}}</span>
+                <button *ngIf="results[i].length > 0" mat-icon-button matSuffix (click)="copy(results[i])">
+                  <mat-icon>file_copy</mat-icon>
+                </button>
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div *ngIf="settings.mode != 'programmer'">
+            <span matRipple [matRippleTrigger]="resultRipple2" #resultRipple2 class="result-txt">{{results[1]}}</span>
+            <button *ngIf="results[1].length > 0" mat-icon-button matSuffix (click)="copy(results[1])">
+              <mat-icon>file_copy</mat-icon>
+            </button>
+          </div>
+          <mat-radio-group *ngIf="isTrigonometric" class="degree-radio" [(ngModel)]="degreeUnit" (change)="compute()">
+            <mat-radio-button *ngFor="let u of degreeUnits" [value]="u">
+              {{u}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </div>
+    <mat-card class="m-5" [@enterAnimation] *ngIf="isShowHistory">
+      <mat-action-list>
+        <div mat-list-item *ngFor="let o of computeHistory; let i = index">
+          <button mat-raised-button class="wide-btn" (click)="loadFromHistory(o)"> {{o}}
+          </button>
+          <button mat-icon-button (click)="deleteFromHistory(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </mat-action-list>
+    </mat-card>
+    <app-screen-keyboard [@enterAnimation] *ngIf="!isShowHistory" class="m-5" [currInp]="inp"
+      (screenKeyClicked)="onScreenKeyClicked($event)" [virtualPressColorInp]="currBtnPressColor">
+    </app-screen-keyboard>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

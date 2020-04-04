@@ -1,0 +1,105 @@
+.main-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+mat-form-field {
+  margin-right: 12px;
+}
+
+mat-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.degree-radio {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0;
+}
+
+mat-radio-button {
+  margin: 5px;
+}
+
+.editor {
+  width: 100%;
+}
+
+.container {
+  padding: 7px;
+}
+
+app-screen-keyboard {
+  height: 60vh;
+}
+
+.result-txt {
+  font-size: x-large;
+  padding: 15px;
+}
+
+.result-base {
+  font-size: small;
+}
+
+.result-panel {
+  size: 3;
+}
+
+mat-sidenav {
+  max-width: 50vw;
+}
+
+.wide-btn {
+  width: 33vw;
+}
+
+.form-part {
+  padding: 7px;
+  margin: 7px;
+  border: 1px solid #f0f0f0;
+  border-radius: 12px;
+}
+
+.mat-standard-chip:focus {
+  outline: none;
+}
+
+.centered-div {
+  margin-right: auto;
+  margin-left: auto;
+  display: table;
+}
+
+.app-title {
+  font-size: small;
+}
+
+.inf-shine-txt {
+  animation-iteration-count: 1;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: shineText 3s linear;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+
+@keyframes shineText {
+  0% {
+    background-position: -500%;
+  }
+
+  100% {
+    background-position: 500%;
+  }
+}

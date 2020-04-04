@@ -1,0 +1,12 @@
+button {
+  width: 100%;
+  height: 100%;
+}
+
+mat-grid-list {
+  height: 50vh;
+}
+
+div {
+  font-size: large;
+}
