@@ -1,7 +1,6 @@
 <mat-sidenav-container class="main-container mat-app-background">
   <mat-sidenav mode="side" #sidenav [(opened)]="isOpen" (disableClose)="true">
     <mat-accordion>
-
       <div>
         <div class="form-part">
           <form [formGroup]="fnListForm" class="container">
@@ -92,13 +91,12 @@
           <h5>{{'About'|translate}}</h5>
           <span style="display:table; max-width:20vw;">{{'AboutTxt'|translate}}</span>
           <small> <span>Hasap 1.0.0</span> </small>
-          <a href="https://github.com/canbax/handyCalc" target="_blank" mat-button>
+          <a href="https://github.com/canbax/hasap" target="_blank" mat-button>
             <small> <span>{{'MoreAbout'|translate}}</span> </small>
           </a>
         </div>
       </div>
     </mat-accordion>
-
   </mat-sidenav>
   <mat-sidenav-content class="m-5">
     <div>
@@ -109,7 +107,6 @@
     </div>
 
     <div class="m-5">
-
       <div [hidden]="settings.mode != 'date & time'">
         <mat-form-field class="editor" appearance="outline">
           <mat-chip-list #chipList>
@@ -120,6 +117,14 @@
             <input #userDateInp2 #userDateInp="matAutocompleteTrigger" [matAutocomplete]="auto"
               [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="[13, 32]" [matChipInputAddOnBlur]="false"
               (matChipInputTokenEnd)="addChip($event)" (change)="syncInp()">
+            <span matSuffix>
+              <button style="display: inline;" mat-button mat-icon-button (click)="copy(inp)">
+                <mat-icon>file_copy</mat-icon>
+              </button>
+              <button style="display: inline;" mat-button mat-icon-button (click)="isShowHistory=!isShowHistory;">
+                <mat-icon>history</mat-icon>
+              </button>
+            </span>
             <mat-hint>{{usrHint}}</mat-hint>
           </mat-chip-list>
           <mat-autocomplete #auto="matAutocomplete" (optionSelected)="timeUnitSelected($event)">
@@ -128,6 +133,7 @@
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>
+
       </div>
       <div>
         <mat-form-field *ngIf="settings.mode != 'date & time'" [style.fontSize]="16" class="editor"
@@ -139,11 +145,6 @@
           <mat-hint>{{usrHint}}</mat-hint>
           <!-- buttons which are inline with input -->
           <span matSuffix>
-            <span [hidden]="settings.mode != 'date & time'">
-              <button style="display: inline;" mat-button mat-icon-button id="date-inp">
-                <mat-icon>date_range</mat-icon>
-              </button>
-            </span>
             <button style="display: inline;" mat-button mat-icon-button (click)="copy(inp)">
               <mat-icon>file_copy</mat-icon>
             </button>
@@ -166,6 +167,9 @@
             </mat-radio-group>
           </div>
           <div *ngIf="settings.mode != 'programmer'">
+            <button *ngIf="settings.mode == 'date & time'" mat-button mat-icon-button id="date-inp">
+              <mat-icon>date_range</mat-icon>
+            </button>
             <span matRipple [matRippleTrigger]="resultRipple2" #resultRipple2 class="result-txt">{{results[1]}}</span>
             <button *ngIf="results[1].length > 0" mat-icon-button matSuffix (click)="copy(results[1])">
               <mat-icon>file_copy</mat-icon>

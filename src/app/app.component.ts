@@ -152,18 +152,8 @@ export class AppComponent implements OnInit {
       );
     setInterval(this.keepHistory.bind(this), this.PUSH_HISTORY_MS);
 
-    flatpickr('#date-inp', {
-      defaultDate: new Date(), enableTime: true, enableSeconds: true, time_24hr: true,
-      onClose: () => {
-        if (this.isDateSelected) {
-          let d1 = document.querySelector('#date-inp')['_flatpickr'].selectedDates[0] as Date;
-          this.processInp4chips();
-          this.dateChips.push({ isHumanDate: true, str: d1.toLocaleString(), val: d1.getTime() });
-          this.isDateSelected = false;
-          this.compute();
-        }
-      }, onChange: () => { this.isDateSelected = true; }
-    });
+    this.initFlatPickr();
+
     this.setHtmlTitle();
     setTimeout(() => { this.isAnimateTitle = false }, 3000);
   }
@@ -215,6 +205,9 @@ export class AppComponent implements OnInit {
       this.bases = [];
     }
     this._usrSetting.setSetting('mode', this.settings.mode);
+    if (this.settings.mode == 'date & time') {
+      this.initFlatPickr();
+    }
     this.refreshSideNav();
   }
 
@@ -354,9 +347,11 @@ export class AppComponent implements OnInit {
   }
 
   addChip(event: MatChipInputEvent): void {
-    const value = event.value;
+    let value = event.value.trim();
     this.processInp4chips();
-    this.dateChips.push({ val: Number(value), str: value, isHumanDate: false });
+    if (value.length > 0) {
+      this.dateChips.push({ val: Number(value), str: value, isHumanDate: false });
+    }
     this.compute();
   }
 
@@ -369,8 +364,35 @@ export class AppComponent implements OnInit {
     let s = this._usrDateInp.nativeElement.value.trim();
     let unit = e.option.viewValue;
     this.processInp4chips();
+    if (s.length < 1) {
+      s = '1';
+    }
     this.dateChips.push({ isHumanDate: false, str: s + unit, val: Number(s) });
     this.compute();
+  }
+
+  private initFlatPickr() {
+    if (this.settings.mode != 'date & time') {
+      return;
+    }
+    setTimeout(() => {
+      let dateElem = document.querySelector('#date-inp');
+      if (dateElem && dateElem['_flatpickr']) {
+        return;
+      }
+      flatpickr('#date-inp', {
+        defaultDate: new Date(), enableTime: true, enableSeconds: true, time_24hr: true,
+        onClose: () => {
+          if (this.isDateSelected) {
+            let d1 = document.querySelector('#date-inp')['_flatpickr'].selectedDates[0] as Date;
+            this.processInp4chips();
+            this.dateChips.push({ isHumanDate: true, str: d1.toLocaleString(), val: d1.getTime() });
+            this.isDateSelected = false;
+            this.compute();
+          }
+        }, onChange: () => { this.isDateSelected = true; }
+      });
+    }, 1000);
   }
 
   private setHtmlTitle() {
@@ -408,7 +430,7 @@ export class AppComponent implements OnInit {
   }
 
   private processInp4chips() {
-    let s = this._usrDateInp.nativeElement.value;
+    let s = this._usrDateInp.nativeElement.value.trim();
     if (this.opChips4DateTime.includes(s)) {
       this.dateChips.push({ isHumanDate: false, str: s, val: 0 });
     }
@@ -418,11 +440,16 @@ export class AppComponent implements OnInit {
 
   private compute4dateTime(): string {
     let s = '';
-    for (let c of this.dateChips) {
+    for (let i = 0; i < this.dateChips.length; i++) {
+      let c = this.dateChips[i];
       if (c.isHumanDate) {
         s += c.val;
       } else {
-        s += c.str;
+        if (i > 0 && !this.dateChips[i - 1].isHumanDate && !this.isContainDateOp(c.str) && !this.isContainDateOp(this.dateChips[i - 1].str)) {
+          s += '+' + c.str;
+        } else {
+          s += c.str;
+        }
       }
     }
     for (let u in TIME_UNIT_STR[this.settings.lang]) {
@@ -430,6 +457,15 @@ export class AppComponent implements OnInit {
     }
     console.log('compute4dateTime:', s);
     return s;
+  }
+
+  private isContainDateOp(s: string) {
+    for (let i = 0; i < this.opChips4DateTime.length; i++) {
+      if (s.includes(this.opChips4DateTime[i])) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private getResult4DateTime(result: string): string {
