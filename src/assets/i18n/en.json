@@ -25,5 +25,6 @@
   },
   "inpExpo": "Written expressions will be calculated automatically",
   "mathParseError": "Expressions couldn't understood",
-  "appTitle": "Hasap: Math Calculator"
+  "appTitle": "Hasap: Math Calculator",
+  "History": "History"
 }

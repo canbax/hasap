@@ -184,8 +184,10 @@
       </div>
     </div>
     <mat-card class="m-5" [@enterAnimation] *ngIf="isShowHistory">
+      <h5 style="text-align: center;">{{'History'|translate}}</h5>
       <mat-action-list>
-        <div mat-list-item *ngFor="let o of computeHistory; let i = index">
+        <div mat-list-item *ngFor="let o of computeHistory; let i = index"
+          style="display: table; margin-left: auto; margin-right: auto;">
           <button mat-raised-button class="wide-btn" (click)="loadFromHistory(o)"> {{o}}
           </button>
           <button mat-icon-button (click)="deleteFromHistory(i)">

@@ -7,7 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ScreenKeyboardComponent } from './screen-keyboard/screen-keyboard.component';
 import { TrigonometricFnArg, DateTimeChip, TIME_UNITS, getPrettyTime, TIME_UNIT_STR } from './meta-types';
 import { STD_KEYBOARD, EXTENDED_KEYBOARD, PROGRAMMER_KEYBOARD } from './screen-keyboard/keyboards';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
 import { MathFnGroup, _filter, fnGroups, fnGroupExpo } from './math-fn';
@@ -85,10 +85,10 @@ export class AppComponent implements OnInit {
   isShowHistory = false;
   computeHistory: string[] = [];
   cssThemes = [
-    { path: 'assets/prebuilt-themes/deeppurple-amber.css', txt: 'deep purple-amber' },
-    { path: 'assets/prebuilt-themes/indigo-pink.css', txt: 'indigo pink' },
-    { path: 'assets/prebuilt-themes/pink-bluegrey.css', txt: 'pink blue-grey' },
-    { path: 'assets/prebuilt-themes/purple-green.css', txt: 'purple green' }];
+    { path: 'assets/prebuilt-themes/deeppurple-amber.css', txt: 'deep purple-amber (light)' },
+    { path: 'assets/prebuilt-themes/indigo-pink.css', txt: 'indigo pink (light)' },
+    { path: 'assets/prebuilt-themes/pink-bluegrey.css', txt: 'pink blue-grey (dark)' },
+    { path: 'assets/prebuilt-themes/purple-green.css', txt: 'purple green (dark)' }];
   langs = { 'tr': 'Türkçe', 'en': 'English' };
   dateChips: DateTimeChip[] = [];
   readonly separatorKeysCodes: number[] = [ENTER];
@@ -403,6 +403,9 @@ export class AppComponent implements OnInit {
   }
 
   private handleOpSingleParanthesis() {
+    if (!this._screenKeyboard) {
+      return;
+    }
     let currOps = this._screenKeyboard.tiles.filter(x => x.isOp);
     for (let i = 0; i < currOps.length; i++) {
       if (this.inp.trim().endsWith(currOps[i].fn(''))) {
