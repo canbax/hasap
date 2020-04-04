@@ -1,0 +1,29 @@
+{
+  "Settings": "Settings",
+  "standard": "standard",
+  "extended": "extended",
+  "programmer": "programmer",
+  "Language": "Language",
+  "Precision for floating-point numbers in result": "Precision for floating-point numbers in result",
+  "Number of digits in result": "Number of digits in result",
+  "Ignore commas": "Ignore commas",
+  "Use for floating-point numbers": "Use for floating-point numbers",
+  "Info": "Info",
+  "Style": "Style",
+  "Functions": "Functions",
+  "About": "About",
+  "AboutTxt": "Hasap is free, ad-free and open-source math calculator.",
+  "MoreAbout": "More info",
+  "timeUnits": {
+    "year": "year",
+    "month": "month",
+    "day": "day",
+    "hour": "hour",
+    "minute": "minute",
+    "second": "second",
+    "ms": "millisecond"
+  },
+  "inpExpo": "Written expressions will be calculated automatically",
+  "mathParseError": "Expressions couldn't understood",
+  "appTitle": "Hasap: Math Calculator"
+}

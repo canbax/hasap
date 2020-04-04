@@ -1,0 +1,92 @@
+{
+  "configVersion": 1,
+  "timestamp": 1585996487339,
+  "index": "/hasap/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/hasap/favicon.ico",
+        "/hasap/index.html",
+        "/hasap/main-es2015.63ce052ea4f434ad5bdb.js",
+        "/hasap/main-es5.63ce052ea4f434ad5bdb.js",
+        "/hasap/manifest.webmanifest",
+        "/hasap/polyfills-es2015.28b264071c0a6503d0b4.js",
+        "/hasap/polyfills-es5.4b8148a3acab94b58774.js",
+        "/hasap/runtime-es2015.c9afb3256f2870e161de.js",
+        "/hasap/runtime-es5.c9afb3256f2870e161de.js",
+        "/hasap/styles.23af805d0c4af4b8b2f2.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/hasap/assets/i18n/en.json",
+        "/hasap/assets/i18n/tr.json",
+        "/hasap/assets/icons/icon-128x128.png",
+        "/hasap/assets/icons/icon-144x144.png",
+        "/hasap/assets/icons/icon-152x152.png",
+        "/hasap/assets/icons/icon-192x192.png",
+        "/hasap/assets/icons/icon-384x384.png",
+        "/hasap/assets/icons/icon-512x512.png",
+        "/hasap/assets/icons/icon-72x72.png",
+        "/hasap/assets/icons/icon-96x96.png",
+        "/hasap/assets/prebuilt-themes/deeppurple-amber.css",
+        "/hasap/assets/prebuilt-themes/indigo-pink.css",
+        "/hasap/assets/prebuilt-themes/pink-bluegrey.css",
+        "/hasap/assets/prebuilt-themes/purple-green.css"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/hasap/assets/i18n/en.json": "0f934429dc2c23dcd98a9a3fe04f040397566cff",
+    "/hasap/assets/i18n/tr.json": "bc9839956b714e0871687761b4d276ed46330ab7",
+    "/hasap/assets/icons/icon-128x128.png": "bb7ccf5fff2e8582e543cebfd85b6ccf223caf0d",
+    "/hasap/assets/icons/icon-144x144.png": "ebcdf799921f3acb3ead9ffdef35180be0d50868",
+    "/hasap/assets/icons/icon-152x152.png": "7b9caac98512c3aecac2a2fc33fb626683cfa5ac",
+    "/hasap/assets/icons/icon-192x192.png": "33894e22d2be4b7fd0cec4a7f9eb64514cd60d51",
+    "/hasap/assets/icons/icon-384x384.png": "879a4736298e86930307375fdccadd1831cf561d",
+    "/hasap/assets/icons/icon-512x512.png": "c2843a672e68cf44051b44abc73e3f713b63803e",
+    "/hasap/assets/icons/icon-72x72.png": "ece06255bf01308be8a46600c6d5013c455c2b25",
+    "/hasap/assets/icons/icon-96x96.png": "d354d0fbe2aea4f0c67a8711e80995d81b846013",
+    "/hasap/assets/prebuilt-themes/deeppurple-amber.css": "a8bbf23816803bb2ef803bd3aa32ca9a887226aa",
+    "/hasap/assets/prebuilt-themes/indigo-pink.css": "d70647f123fa029f1b522b5dc6dd949068862df5",
+    "/hasap/assets/prebuilt-themes/pink-bluegrey.css": "c0ea7d6ea6b138cb897c87b6f646e0c92e6bac58",
+    "/hasap/assets/prebuilt-themes/purple-green.css": "491d81c46d71d9d9f516ae2241f87fc7d175b3eb",
+    "/hasap/favicon.ico": "ece06255bf01308be8a46600c6d5013c455c2b25",
+    "/hasap/index.html": "7272e245aca5a5f2e92b0082e7cbddcf720b80fe",
+    "/hasap/main-es2015.63ce052ea4f434ad5bdb.js": "9cf86395258e6119badc12011a728155eb93b645",
+    "/hasap/main-es5.63ce052ea4f434ad5bdb.js": "cff7bd70b1181e66a5e5392d52a3f28d16e39a74",
+    "/hasap/manifest.webmanifest": "748179b502126e4c77d9863d3c94366dc87c06b6",
+    "/hasap/polyfills-es2015.28b264071c0a6503d0b4.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
+    "/hasap/polyfills-es5.4b8148a3acab94b58774.js": "e51a1de4f016cd689dbdbef51043dec9518c4111",
+    "/hasap/runtime-es2015.c9afb3256f2870e161de.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/hasap/runtime-es5.c9afb3256f2870e161de.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/hasap/styles.23af805d0c4af4b8b2f2.css": "43f8de5a2acbba181996508562f529318d2c4097"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
