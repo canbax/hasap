@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1586081793378,
+  "timestamp": 1586105364911,
   "index": "/hasap/index.html",
   "assetGroups": [
     {
@@ -64,7 +64,7 @@
     "/hasap/index.html": "ecb755db887a6e7cbd18de67b79f4a345c3085ca",
     "/hasap/main-es2015.98c9acc96c1b7776d2cb.js": "ef0762d41d83cd7a22b23c64c0e94a4ed4cfe003",
     "/hasap/main-es5.98c9acc96c1b7776d2cb.js": "eb651b9765026c7d56e886e560107a74f2e495bb",
-    "/hasap/manifest.webmanifest": "748179b502126e4c77d9863d3c94366dc87c06b6",
+    "/hasap/manifest.webmanifest": "048e206c6f358212c0fd6b60226121fca7f3f9c8",
     "/hasap/polyfills-es2015.28b264071c0a6503d0b4.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "/hasap/polyfills-es5.4b8148a3acab94b58774.js": "e51a1de4f016cd689dbdbef51043dec9518c4111",
     "/hasap/runtime-es2015.c9afb3256f2870e161de.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
