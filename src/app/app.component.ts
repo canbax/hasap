@@ -152,7 +152,7 @@ export class AppComponent implements OnInit {
       );
     setInterval(this.keepHistory.bind(this), this.PUSH_HISTORY_MS);
 
-    this.initFlatPickr();
+    this.handleFlatPickr();
 
     this.setHtmlTitle();
     setTimeout(() => { this.isAnimateTitle = false }, 3000);
@@ -205,9 +205,7 @@ export class AppComponent implements OnInit {
       this.bases = [];
     }
     this._usrSetting.setSetting('mode', this.settings.mode);
-    if (this.settings.mode == 'date & time') {
-      this.initFlatPickr();
-    }
+    this.handleFlatPickr();
     this.refreshSideNav();
   }
 
@@ -371,28 +369,32 @@ export class AppComponent implements OnInit {
     this.compute();
   }
 
-  private initFlatPickr() {
+  private handleFlatPickr() {
+    let dateElem = document.querySelector('#date-inp');
+
     if (this.settings.mode != 'date & time') {
-      return;
-    }
-    setTimeout(() => {
-      let dateElem = document.querySelector('#date-inp');
       if (dateElem && dateElem['_flatpickr']) {
-        return;
+        dateElem.parentNode.removeChild(dateElem);
       }
-      flatpickr('#date-inp', {
-        defaultDate: new Date(), enableTime: true, enableSeconds: true, time_24hr: true,
-        onClose: () => {
-          if (this.isDateSelected) {
-            let d1 = document.querySelector('#date-inp')['_flatpickr'].selectedDates[0] as Date;
-            this.processInp4chips();
-            this.dateChips.push({ isHumanDate: true, str: d1.toLocaleString(), val: d1.getTime() });
-            this.isDateSelected = false;
-            this.compute();
-          }
-        }, onChange: () => { this.isDateSelected = true; }
-      });
-    }, 1000);
+    } else {
+      setTimeout(() => {
+        if (dateElem && dateElem['_flatpickr']) {
+          return;
+        }
+        flatpickr('#date-inp', {
+          defaultDate: new Date(), enableTime: true, enableSeconds: true, time_24hr: true,
+          onClose: () => {
+            if (this.isDateSelected) {
+              let d1 = document.querySelector('#date-inp')['_flatpickr'].selectedDates[0] as Date;
+              this.processInp4chips();
+              this.dateChips.push({ isHumanDate: true, str: d1.toLocaleString(), val: d1.getTime() });
+              this.isDateSelected = false;
+              this.compute();
+            }
+          }, onChange: () => { this.isDateSelected = true; }
+        });
+      }, 1000);
+    }
   }
 
   private setHtmlTitle() {
