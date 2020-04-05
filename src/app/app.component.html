@@ -167,9 +167,11 @@
             </mat-radio-group>
           </div>
           <div *ngIf="settings.mode != 'programmer'">
-            <button *ngIf="settings.mode == 'date & time'" mat-button mat-icon-button id="date-inp">
+            <button *ngIf="settings.mode == 'date & time'" mat-button mat-icon-button (click)="toggleFlatPickr()">
               <mat-icon>date_range</mat-icon>
             </button>
+            <ng2-flatpickr #fpElem [config]="dateTimePickerOpt" *ngIf="settings.mode == 'date & time'">
+            </ng2-flatpickr>
             <span matRipple [matRippleTrigger]="resultRipple2" #resultRipple2 class="result-txt">{{results[1]}}</span>
             <button *ngIf="results[1].length > 0" mat-icon-button matSuffix (click)="copy(results[1])">
               <mat-icon>file_copy</mat-icon>

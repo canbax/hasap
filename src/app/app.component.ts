@@ -14,11 +14,11 @@ import { MathFnGroup, _filter, fnGroups, fnGroupExpo } from './math-fn';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { UserSettingService, UserSetting } from './user-setting.service';
 import { TranslateService } from '@ngx-translate/core';
-import flatpickr from 'flatpickr';
 import { ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { MatRipple } from '@angular/material/core';
+import { FlatpickrOptions } from 'ng2-flatpickr';
 
 @Component({
   selector: 'app-root',
@@ -101,6 +101,9 @@ export class AppComponent implements OnInit {
   @ViewChild(MatRipple) ripple: MatRipple;
   usrHint = '';
   isAnimateTitle = true;
+  @ViewChild('fpElem', { static: false })
+  private _fpElem;
+  dateTimePickerOpt: FlatpickrOptions;
 
   constructor(private _clipboardService: ClipboardService, private _snackBar: MatSnackBar, private _formBuilder: FormBuilder,
     private _usrSetting: UserSettingService, public translate: TranslateService) {
@@ -152,10 +155,21 @@ export class AppComponent implements OnInit {
       );
     setInterval(this.keepHistory.bind(this), this.PUSH_HISTORY_MS);
 
-    this.handleFlatPickr();
-
     this.setHtmlTitle();
     setTimeout(() => { this.isAnimateTitle = false }, 3000);
+
+    this.dateTimePickerOpt = {
+      defaultDate: new Date(), enableTime: true, enableSeconds: true, time_24hr: true,
+      onClose: (e: Date[]) => {
+        if (this.isDateSelected) {
+          this.processInp4chips();
+          this.dateChips.push({ isHumanDate: true, str: e[0].toLocaleString(), val: e[0].getTime() });
+          this.isDateSelected = false;
+          this.compute();
+        }
+      }, static: true, altFormat:'F j, Y', altInput: true,
+      onChange: () => { this.isDateSelected = true; }
+    };
   }
 
   syncInp() {
@@ -205,7 +219,6 @@ export class AppComponent implements OnInit {
       this.bases = [];
     }
     this._usrSetting.setSetting('mode', this.settings.mode);
-    this.handleFlatPickr();
     this.refreshSideNav();
   }
 
@@ -369,32 +382,8 @@ export class AppComponent implements OnInit {
     this.compute();
   }
 
-  private handleFlatPickr() {
-    let dateElem = document.querySelector('#date-inp');
-
-    if (this.settings.mode != 'date & time') {
-      if (dateElem && dateElem['_flatpickr']) {
-        dateElem.parentNode.removeChild(dateElem);
-      }
-    } else {
-      setTimeout(() => {
-        if (dateElem && dateElem['_flatpickr']) {
-          return;
-        }
-        flatpickr('#date-inp', {
-          defaultDate: new Date(), enableTime: true, enableSeconds: true, time_24hr: true,
-          onClose: () => {
-            if (this.isDateSelected) {
-              let d1 = document.querySelector('#date-inp')['_flatpickr'].selectedDates[0] as Date;
-              this.processInp4chips();
-              this.dateChips.push({ isHumanDate: true, str: d1.toLocaleString(), val: d1.getTime() });
-              this.isDateSelected = false;
-              this.compute();
-            }
-          }, onChange: () => { this.isDateSelected = true; }
-        });
-      }, 1000);
-    }
+  toggleFlatPickr() {
+    this._fpElem.flatpickr.toggle();
   }
 
   private setHtmlTitle() {

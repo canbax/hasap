@@ -21,6 +21,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRippleModule } from '@angular/material/core';
+import { Ng2FlatpickrModule } from 'ng2-flatpickr';
 
 import { AppComponent } from './app.component';
 import { ScreenKeyboardComponent } from './screen-keyboard/screen-keyboard.component';
@@ -52,6 +53,7 @@ import { environment } from '../environments/environment';
     MatListModule,
     MatExpansionModule,
     HttpClientModule,
+    Ng2FlatpickrModule,
     MatChipsModule,
     MatRippleModule,
     TranslateModule.forRoot({
