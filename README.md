@@ -84,5 +84,10 @@ I also used duckduckgo a lot. It wasn't good with trigonometric functions either
   <img src="docs/ddgCalculator.gif" title="Chaning unit type to degree does not work"/>
 </p>
 
+## For developers
+Built with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
+Use `npm i` to install dependencies. `ng s` to run in development mode. 
+I also use `angular-cli-ghpages` for deploying my app to github-pages branch using the command `ng deploy --base-href=/hasap/`. Thanks for this awesome library as well.
+
 I hope this tool would be handy and useful for people.
 
