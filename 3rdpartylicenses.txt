@@ -452,6 +452,9 @@ Apache-2.0
    END OF TERMS AND CONDITIONS
 
 
+ng2-flatpickr
+ISC
+
 ngx-clipboard
 MIT
 
