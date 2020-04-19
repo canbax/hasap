@@ -260,7 +260,7 @@ export class AppComponent implements OnInit {
       this.results[1] = this.results[1].replace(new RegExp('"|\'', 'g'), '')
       // this.results[1] = (this.results[1]+ '').substr(0, this.settings.numDigit4Results);
       if (this.settings.mode == 'date & time') {
-        this.results[1] = this.getResult4DateTime(this.results[1]);
+        [this.results[1], this.results[2]] = (this.getResult4DateTime(this.results[1]));
       }
       this.calculateResultsOnOtherBases();
       this.launchRipple();
@@ -462,18 +462,8 @@ export class AppComponent implements OnInit {
     return false;
   }
 
-  private getResult4DateTime(result: string): string {
-    let hasHumanDate = false;
-    for (let c of this.dateChips) {
-      if (c.isHumanDate) {
-        hasHumanDate = true;
-      }
-    }
-    if (hasHumanDate) {
-      return new Date(Number(result)).toLocaleString();
-    } else {
-      return getPrettyTime(Number(result), this.settings.lang);
-    }
+  private getResult4DateTime(result: string): string[] {
+    return [new Date(Number(result)).toLocaleString(), getPrettyTime(Number(result), this.settings.lang)];
   }
 
   private refreshSideNav() {

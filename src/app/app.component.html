@@ -172,10 +172,20 @@
             </button>
             <ng2-flatpickr #fpElem [config]="dateTimePickerOpt" *ngIf="settings.mode == 'date & time'">
             </ng2-flatpickr>
-            <span matRipple [matRippleTrigger]="resultRipple2" #resultRipple2 class="result-txt">{{results[1]}}</span>
-            <button *ngIf="results[1].length > 0" mat-icon-button matSuffix (click)="copy(results[1])">
-              <mat-icon>file_copy</mat-icon>
-            </button>
+            <div>
+              <span matRipple [matRippleTrigger]="resultRipple2" #resultRipple2 class="result-txt">{{results[1]}}</span>
+              <button *ngIf="results[1].length > 0" mat-icon-button matSuffix (click)="copy(results[1])">
+                <mat-icon>file_copy</mat-icon>
+              </button>
+            </div>
+            <div *ngIf="settings.mode == 'date & time'">
+              <span matRipple [matRippleTrigger]="resultRipple2" #resultRipple2
+                class="result-txt">{{results[2]}}</span>
+              <button *ngIf="results[2].length > 0" mat-icon-button matSuffix
+                (click)="copy(results[2])">
+                <mat-icon>file_copy</mat-icon>
+              </button>
+            </div>
           </div>
           <mat-radio-group *ngIf="isTrigonometric" class="degree-radio" [(ngModel)]="degreeUnit" (change)="compute()">
             <mat-radio-button *ngFor="let u of degreeUnits" [value]="u">
