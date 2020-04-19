@@ -1,5 +1,5 @@
 <mat-sidenav-container class="main-container mat-app-background">
-  <mat-sidenav mode="side" #sidenav [(opened)]="isOpen" (disableClose)="true">
+  <mat-sidenav role="directory" mode="side" #sidenav [(opened)]="isOpen" (disableClose)="true">
     <mat-accordion>
       <div>
         <div class="form-part">
@@ -98,7 +98,7 @@
       </div>
     </mat-accordion>
   </mat-sidenav>
-  <mat-sidenav-content class="m-5">
+  <mat-sidenav-content role="main" class="m-5">
     <div>
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
