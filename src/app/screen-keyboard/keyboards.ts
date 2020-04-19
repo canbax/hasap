@@ -15,7 +15,7 @@ export const STD_KEYBOARD: CalcBtn[] = [
   { txt: '5', fn: (s) => { return s + '5' }, ids: ['5'] },
   { txt: '6', fn: (s) => { return s + '6' }, ids: ['6'] },
   { txt: 'x', fn: (s) => { return s + '*' }, ids: ['x'] },
-  { txt: '÷', fn: (s) => { return s + '÷' }, ids: ['/'] },
+  { txt: '÷', fn: (s) => { return s + '/' }, ids: ['/'] },
   { txt: '1', fn: (s) => { return s + '1' }, ids: ['1'] },
   { txt: '2', fn: (s) => { return s + '2' }, ids: ['2'] },
   { txt: '3', fn: (s) => { return s + '3' }, ids: ['3'] },
@@ -54,7 +54,7 @@ export const EXTENDED_KEYBOARD: CalcBtn[] = [
   { txt: '5', fn: (s) => { return s + '5' }, ids: ['5'] },
   { txt: '6', fn: (s) => { return s + '6' }, ids: ['6'] },
   { txt: 'x', fn: (s) => { return s + '*' }, ids: ['x'] },
-  { txt: '÷', fn: (s) => { return s + '÷' }, ids: ['/'] },
+  { txt: '÷', fn: (s) => { return s + '/' }, ids: ['/'] },
 
   { txt: '%', fn: (s) => { return s + '%' }, ids: ['%'] },
   { txt: '1', fn: (s) => { return s + '1' }, ids: ['1'] },
@@ -96,7 +96,7 @@ export const PROGRAMMER_KEYBOARD: CalcBtn[] = [
   { txt: '5', fn: (s) => { return s + '5' }, ids: ['5'] },
   { txt: '6', fn: (s) => { return s + '6' }, ids: ['6'] },
   { txt: 'x', fn: (s) => { return s + '*' }, ids: ['x'] },
-  { txt: '÷', fn: (s) => { return s + '÷' }, ids: ['/'] },
+  { txt: '÷', fn: (s) => { return s + '/' }, ids: ['/'] },
 
   { txt: '%', fn: (s) => { return s + '%' }, ids: ['%'] },
   { txt: '1', fn: (s) => { return s + '1' }, ids: ['1'] },
@@ -128,7 +128,7 @@ export const DATETIME_KEYBOARD: CalcBtn[] = [
   { txt: '5', fn: (s) => { return s + '5' }, ids: ['5'] },
   { txt: '6', fn: (s) => { return s + '6' }, ids: ['6'] },
   { txt: 'x', fn: (s) => { return s + '*' }, ids: ['x'] },
-  { txt: '÷', fn: (s) => { return s + '÷' }, ids: ['/'] },
+  { txt: '÷', fn: (s) => { return s + '/' }, ids: ['/'] },
 
   { txt: '1', fn: (s) => { return s + '1' }, ids: ['1'] },
   { txt: '2', fn: (s) => { return s + '2' }, ids: ['2'] },
