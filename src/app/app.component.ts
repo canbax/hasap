@@ -63,6 +63,7 @@ export class AppComponent implements OnInit {
   private modelChanged: Subject<string> = new Subject<string>();
   private keyPressed: Subject<string> = new Subject<string>();
   isOpen: boolean;
+  isAutoSizeSideNav: boolean = false;
 
   @ViewChild(ScreenKeyboardComponent, { static: false })
   private _screenKeyboard: ScreenKeyboardComponent;
@@ -167,7 +168,7 @@ export class AppComponent implements OnInit {
           this.isDateSelected = false;
           this.compute();
         }
-      }, static: true, altFormat:'F j, Y', altInput: true,
+      }, static: true, altFormat: 'F j, Y', altInput: true,
       onChange: () => { this.isDateSelected = true; }
     };
   }
@@ -467,9 +468,8 @@ export class AppComponent implements OnInit {
   }
 
   private refreshSideNav() {
-    let state = this.isOpen;
-    setTimeout(() => this.isOpen = !state, 0);
-    setTimeout(() => this.isOpen = state, 1);
+    this.isAutoSizeSideNav = true;
+    setTimeout(() => this.isAutoSizeSideNav = false, 1);
   }
 
   private _filterGroup(value: string): MathFnGroup[] {

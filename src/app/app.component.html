@@ -1,4 +1,4 @@
-<mat-sidenav-container class="main-container mat-app-background">
+<mat-sidenav-container class="main-container mat-app-background" [autosize]="isAutoSizeSideNav">
   <mat-sidenav role="directory" mode="side" #sidenav [(opened)]="isOpen" (disableClose)="true">
     <mat-accordion>
       <div>
@@ -90,7 +90,7 @@
         <div class="form-part">
           <h5>{{'About'|translate}}</h5>
           <span style="display:table; max-width:20vw;">{{'AboutTxt'|translate}}</span>
-          <small> <span>Hasap 1.0.0</span> </small>
+          <small> <span>Hasap 1.0.1</span> </small>
           <a href="https://github.com/canbax/hasap" target="_blank" mat-button>
             <small> <span>{{'MoreAbout'|translate}}</span> </small>
           </a>
