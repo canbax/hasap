@@ -1,20 +1,20 @@
-# hasap
+# Hasap
 
 A web-based general-purpose math calculator.https://canbax.github.io/hasap/
 
-## features
+## Features
 
-### wide variaety of functions
+### Wide Variaety of Functions
 This application uses [math.js](https://github.com/josdejong/mathjs) for calculations.[math.js](https://github.com/josdejong/mathjs) has many [functions](https://mathjs.org/docs/reference/functions.html). You can see list of functions from user-interface.
 <p align="center">
   <img src="docs/showFunctions.gif" title="List of functions might be used in calculations"/>
 </p>
 
-### automatic calculations
+### Automatic Calculations
 
 As you type mathematical expressions, the results are calculated automatically after you stopped typing. You don't need to press any button to calculate.
 
-### 4 different modes
+### Four Modes
 
 There are 4 different modes. All the modes have their own screen keyboard.
 
@@ -39,7 +39,7 @@ Here you can also make date-time calculations. Let's say today is 4 of April 202
   <img src="docs/themes.gif" title="List of time units"/>
 </p>
 
-### Copy-paste and others
+### Copy-paste & Others
 
 You can copy-paste input. You can copy the results of the calculations. You can ignore commas in calculations.
 You can set the number of digits in the result. You can set the precision in results.
@@ -47,7 +47,7 @@ You can set the number of digits in the result. You can set the precision in res
   <img src="docs/copyPasteIgnoreComma.gif" title="List of time units"/>
 </p>
 
-## Use it as an app 
+## Use as an App 
 
 Since **Hasap** is a progressive web app, you can download it and use it as an app. If you download it as an app, you can use it without the Internet.
 <p align="center">
@@ -61,7 +61,7 @@ I didn't consider mobile experience. So it is not good in mobile but it can be u
   <img src="docs/android-pwa0.jfif" title="Add as an app"/>
 </p>
 
-## Yet another calculator. Why?
+## Yet Another Calculator?
 
 I find the tools that I use frustrating and not functional enough.
 For example Windows 10 has a great calculator. It has more functionality than this one. I definitely inspired by it.
@@ -84,7 +84,7 @@ I also used duckduckgo a lot. It wasn't good with trigonometric functions either
   <img src="docs/ddgCalculator.gif" title="Chaning unit type to degree does not work"/>
 </p>
 
-## For developers
+## For Developers
 Built with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 Use `npm i` to install dependencies. `ng s` to run in development mode. 
 I also use `angular-cli-ghpages` for deploying my app to github-pages branch using the command `ng deploy --base-href=/hasap/`. Thanks for this useful library.
