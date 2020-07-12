@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1594500900715,
+  "timestamp": 1594574586802,
   "index": "/hasap/index.html",
   "assetGroups": [
     {
@@ -48,14 +48,14 @@
   "hashTable": {
     "/hasap/assets/i18n/en.json": "f2e4ea550903d513246d45c837c8e0a938890edc",
     "/hasap/assets/i18n/tr.json": "ee73988b767c233673486f6182617dc16cec07a6",
-    "/hasap/assets/icons/icon-128x128.png": "9c31fea62b411f77b13214095cb951f8dd3e1dca",
-    "/hasap/assets/icons/icon-144x144.png": "0aee56a1c60dcf598da5608fbec64bc2c6dddfb2",
-    "/hasap/assets/icons/icon-152x152.png": "720ea5a4e98f7c636c200445cde509f3e6240fb7",
-    "/hasap/assets/icons/icon-192x192.png": "ef1e5ef7247d5c47eeec5ffaaf374ce234da2a34",
-    "/hasap/assets/icons/icon-384x384.png": "644914ee1e84524ea7b43ed55be8ffb0213d7011",
-    "/hasap/assets/icons/icon-512x512.png": "e96d6981ad39cdd1c3b3d6f2d7ef90748e9127da",
-    "/hasap/assets/icons/icon-72x72.png": "b5422e848510e2e16612b0d43eaab9bdaef30754",
-    "/hasap/assets/icons/icon-96x96.png": "e4235ae9042d7cfe31222bcd6c23cd0db66dd162",
+    "/hasap/assets/icons/icon-128x128.png": "598cd6e138cb6a701687bdfa3937eab2a65cd1b6",
+    "/hasap/assets/icons/icon-144x144.png": "f4ecf0aefb60af70941164a9ad2732b743beeb96",
+    "/hasap/assets/icons/icon-152x152.png": "4bd9a1fae49e07ebbd5949ac0a3b0f3537925edd",
+    "/hasap/assets/icons/icon-192x192.png": "3b6fb0f5d56241c8b27eb20a7f0503e931fa5dd0",
+    "/hasap/assets/icons/icon-384x384.png": "f0fdb0741c475dcbd9e0340012150bd591e83c67",
+    "/hasap/assets/icons/icon-512x512.png": "793f7d0a390fecc13ca0a874d3b8c08a25b85acd",
+    "/hasap/assets/icons/icon-72x72.png": "e8b0714b004aa901dffa64bee506b4f1987f0c6f",
+    "/hasap/assets/icons/icon-96x96.png": "102d41b17f7630f7327214fcbe384e65f9bdbf8d",
     "/hasap/assets/prebuilt-themes/deeppurple-amber.css": "a8bbf23816803bb2ef803bd3aa32ca9a887226aa",
     "/hasap/assets/prebuilt-themes/indigo-pink.css": "d70647f123fa029f1b522b5dc6dd949068862df5",
     "/hasap/assets/prebuilt-themes/pink-bluegrey.css": "c0ea7d6ea6b138cb897c87b6f646e0c92e6bac58",
