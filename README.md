@@ -1,16 +1,18 @@
 # Hasap
 
-A web-based general-purpose math calculator.https://canbax.github.io/hasap/
+A web-based general-purpose math calculator. Aims ultimate user-friendliness on real-life math calculations. Free, ads-free, and, open-source.
+
+https://canbax.github.io/hasap/
 
 ## Features
 
 ### Wide Variaety of Functions
-This application uses [math.js](https://github.com/josdejong/mathjs) for calculations.[math.js](https://github.com/josdejong/mathjs) has many [functions](https://mathjs.org/docs/reference/functions.html). You can see list of functions from user-interface.
+This application uses [math.js](https://github.com/josdejong/mathjs) for calculations. [math.js](https://github.com/josdejong/mathjs) has many [functions](https://mathjs.org/docs/reference/functions.html). You can see list of functions from user-interface.
 <p align="center">
   <img src="docs/showFunctions.gif" title="List of functions might be used in calculations"/>
 </p>
 
-### Automatic Calculations
+### Automatic Calculations (You DO NOT NEED to press =)
 
 As you type mathematical expressions, the results are calculated automatically after you stopped typing. You don't need to press any button to calculate.
 
@@ -64,24 +66,24 @@ I didn't consider mobile experience. So it is not good in mobile but it can be u
 ## Yet Another Calculator?
 
 I find the tools that I use frustrating and not functional enough.
-For example Windows 10 has a great calculator. It has more functionality than this one. I definitely inspired by it.
+For example, Windows 10 has a great calculator. It has more functionality than this one. I definitely inspired by it.
 
-* But you can not copy paste whole strings to it.
-* Let's say I did a long calculation like `2^4-145+4*23` . Why I can't change 145 to 146?
-* I really like button pressed effect on screen keyboard. But there is a small glitch which I found bit annoying. When I press a button continiously It is not shown pressed contiously, there is a small glitch.
+* But you can not copy-paste whole strings to it.
+* Let's say I did a long calculation like `2^4-145+4*23`. Why I can't change 145 to 146?
+* I really like button pressed effect on-screen keyboard. But there is a small glitch which I found a bit annoying. When I press a button continuously It is not shown pressed continuously, there is a small glitch.
 
 <p align="center">
   <img src="docs/win10-glitch.gif" title="I press the button continously but it is not shown pressed continously"/>
 </p>
 
-I used google as calculator a lot. You can copy-paste text and change the string from the middle of it. But When I changed angle unit to degree why the results aren't changing.
+I used google as a calculator a lot. You can copy-paste text and change the string from the middle of it. But When I changed angle unit to degree why the results aren't changing.
 <p align="center">
-  <img src="docs/googleAsCalculator.gif" title="Chaning unit type to degree does not work"/>
+  <img src="docs/googleAsCalculator.gif" title="Changing unit type to degree does not work"/>
 </p>
 
 I also used duckduckgo a lot. It wasn't good with trigonometric functions either.
 <p align="center">
-  <img src="docs/ddgCalculator.gif" title="Chaning unit type to degree does not work"/>
+  <img src="docs/ddgCalculator.gif" title="Changing unit type to degree does not work"/>
 </p>
 
 ## For Developers
