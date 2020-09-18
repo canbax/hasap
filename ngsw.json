@@ -1,23 +1,26 @@
 {
   "configVersion": 1,
-  "timestamp": 1595622474606,
+  "timestamp": 1600456874362,
   "index": "/hasap/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
       "urls": [
         "/hasap/favicon.ico",
         "/hasap/index.html",
-        "/hasap/main-es2015.b0be2b6c4d47c657f985.js",
-        "/hasap/main-es5.b0be2b6c4d47c657f985.js",
+        "/hasap/main-es2015.2bc91c3c32259aa9dfda.js",
+        "/hasap/main-es5.2bc91c3c32259aa9dfda.js",
         "/hasap/manifest.webmanifest",
-        "/hasap/polyfills-es2015.09ee2f719bd21ab5c7b1.js",
-        "/hasap/polyfills-es5.06b0ff63a6a213c41fa3.js",
-        "/hasap/runtime-es2015.0dae8cbc97194c7caed4.js",
-        "/hasap/runtime-es5.0dae8cbc97194c7caed4.js",
-        "/hasap/styles.23af805d0c4af4b8b2f2.css"
+        "/hasap/polyfills-es2015.66a93836dcf9bf727410.js",
+        "/hasap/polyfills-es5.597363a2004f8402110f.js",
+        "/hasap/runtime-es2015.66c79b9d36e7169e27b0.js",
+        "/hasap/runtime-es5.66c79b9d36e7169e27b0.js",
+        "/hasap/styles.65d0aa73a0742f28e4e7.css"
       ],
       "patterns": []
     },
@@ -25,6 +28,9 @@
       "name": "assets",
       "installMode": "lazy",
       "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
       "urls": [
         "/hasap/assets/i18n/en.json",
         "/hasap/assets/i18n/tr.json",
@@ -61,15 +67,15 @@
     "/hasap/assets/prebuilt-themes/pink-bluegrey.css": "c0ea7d6ea6b138cb897c87b6f646e0c92e6bac58",
     "/hasap/assets/prebuilt-themes/purple-green.css": "491d81c46d71d9d9f516ae2241f87fc7d175b3eb",
     "/hasap/favicon.ico": "b5422e848510e2e16612b0d43eaab9bdaef30754",
-    "/hasap/index.html": "ba22c840c06c0a63935ff5a7be601a34aee70114",
-    "/hasap/main-es2015.b0be2b6c4d47c657f985.js": "0fdee3296d885dfde4f96eb16747ae5e5d49bfbc",
-    "/hasap/main-es5.b0be2b6c4d47c657f985.js": "07ebff1e37cef998cbeb59f5ec83049a300b170c",
+    "/hasap/index.html": "d3128eaea589033a91ed46aab40eb21277cff90b",
+    "/hasap/main-es2015.2bc91c3c32259aa9dfda.js": "2b8cce7b0761c0a63680339cae3f7ba2bd234a85",
+    "/hasap/main-es5.2bc91c3c32259aa9dfda.js": "31232fa08efa3f26c17107f8bae590aa407bdc1a",
     "/hasap/manifest.webmanifest": "048e206c6f358212c0fd6b60226121fca7f3f9c8",
-    "/hasap/polyfills-es2015.09ee2f719bd21ab5c7b1.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
-    "/hasap/polyfills-es5.06b0ff63a6a213c41fa3.js": "8aa26ea87b9958c6bd13b7c257c0e9940438e684",
-    "/hasap/runtime-es2015.0dae8cbc97194c7caed4.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/hasap/runtime-es5.0dae8cbc97194c7caed4.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/hasap/styles.23af805d0c4af4b8b2f2.css": "43f8de5a2acbba181996508562f529318d2c4097"
+    "/hasap/polyfills-es2015.66a93836dcf9bf727410.js": "f15ff8f7b911b8f1e16d6f8c5d05b66f35e17069",
+    "/hasap/polyfills-es5.597363a2004f8402110f.js": "3de12a448cd0b64153ed5c43f757d45e33b24425",
+    "/hasap/runtime-es2015.66c79b9d36e7169e27b0.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/hasap/runtime-es5.66c79b9d36e7169e27b0.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/hasap/styles.65d0aa73a0742f28e4e7.css": "0d3bf4d06856d5d1e6e85a084c1651429bbad3f1"
   },
   "navigationUrls": [
     {
