@@ -1,8 +1,12 @@
 # Hasap
 
-A web-based general-purpose math calculator. Aims ultimate user-friendliness on real-life math calculations. Free, ads-free, and, open-source.
+A web-based general-purpose math calculator. Aims ultimate user-friendliness on real-life math calculations. Free, ads-free, and, open-source. Currently, supports Turkish and English.
 
 https://canbax.github.io/hasap/
+
+**Türkçe (Turkish)**
+
+Web tabanlı, genel amaçlı matematiksel işlemci. Günlük hayattaki hesaplamalarda fevkalade kullanıcı dostu olmayı gaye edinmiştir. Ücretsiz, reklamsız, açık kaynaklı. 
 
 ## Features
 
