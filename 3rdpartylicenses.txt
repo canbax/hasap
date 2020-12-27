@@ -244,7 +244,7 @@ SOFTWARE.
 
 
 fraction.js
-MIT OR GPL-2.0
+MIT OR GPL-2.0-or-later
 MIT License
 
 Copyright (c) 2017 Robert Eisele
