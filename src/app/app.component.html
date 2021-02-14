@@ -179,10 +179,8 @@
               </button>
             </div>
             <div *ngIf="settings.mode == 'date & time'">
-              <span matRipple [matRippleTrigger]="resultRipple2" #resultRipple2
-                class="result-txt">{{results[2]}}</span>
-              <button *ngIf="results[2].length > 0" mat-icon-button matSuffix
-                (click)="copy(results[2])">
+              <span matRipple [matRippleTrigger]="resultRipple2" #resultRipple2 class="result-txt">{{results[2]}}</span>
+              <button *ngIf="results[2].length > 0" mat-icon-button matSuffix (click)="copy(results[2])">
                 <mat-icon>file_copy</mat-icon>
               </button>
             </div>
