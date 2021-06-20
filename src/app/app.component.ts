@@ -223,6 +223,15 @@ export class AppComponent implements OnInit {
     this.refreshSideNav();
   }
 
+  showHideHistory() {
+    this.isShowHistory = !this.isShowHistory;
+    if (!this.isShowHistory) {
+      setTimeout(() => {
+        this._screenKeyboard.setKeyboard(this.settings.mode);
+      }, 0);
+    }
+  }
+
   changed(text: string) {
     this.modelChanged.next(text);
   }
